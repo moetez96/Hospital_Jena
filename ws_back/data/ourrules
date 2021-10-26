@@ -1,0 +1,2 @@
+@prefix ns: <http://www.semanticweb.org/hp/ontologies/2021/9/hospital#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.

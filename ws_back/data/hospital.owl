@@ -1,0 +1,606 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#"
+     xml:base="http://www.semanticweb.org/hp/ontologies/2021/9/hospital"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#attendedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#attendedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#contains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#hasHeartDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#hasHeartDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#suffersFrom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartPatient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#hasInjury -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#hasInjury">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#suffersFrom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injured"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injury"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#hasPulmonaryDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#hasPulmonaryDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#suffersFrom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryPatient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heartDoctor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heartDoctor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#attendedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heartPatient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartPatient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Cardiologist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heartPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heartPatient">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Cardiologist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartPatient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#injuredPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#injuredPatient">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#orthopedicDoctor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Orthopedic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injured"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#locatedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#orthopedicDoctor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#orthopedicDoctor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#attendedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injured"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Orthopedic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#pulmonaryDoctor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#pulmonaryDoctor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#attendedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#pulmonaryPatient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryPatient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Pulmonogist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#pulmonaryPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#pulmonaryPatient">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Pulmonogist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryPatient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#suffersFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#suffersFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#CIN -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#CIN">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#phone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#phone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#room_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#room_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#room_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#room_number">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Cardiologist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Cardiologist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Casual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Casual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Disease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#takingCareOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Emergency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Emergency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartPatient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartPatient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injured -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injured">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injury -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injury">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Operating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Operating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Orthopedic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Orthopedic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#attendedBy"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryPatient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryPatient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Pulmonogist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Pulmonogist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Doctor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Reanimation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Reanimation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Operating"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Room"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Surgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Surgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Operating"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#asma -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#asma">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartPatient"/>
+        <hasHeartDisease rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#low_heart_rate"/>
+        <heartDoctor rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#iheb"/>
+        <locatedIn rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#day_room_10"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">33</age>
+        <name xml:lang="en">asma</name>
+        <phone xml:lang="en">98222222</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#cardiac_arrhythmia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#cardiac_arrhythmia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#day_room_10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#day_room_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Casual"/>
+        <contains rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#asma"/>
+        <room_name xml:lang="en">day_room</room_name>
+        <room_number xml:lang="en">10</room_number>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#emergency_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#emergency_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Emergency"/>
+        <contains rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#moetez"/>
+        <room_name xml:lang="en">emergency</room_name>
+        <room_number xml:lang="en">1</room_number>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#fracture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#fracture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injury"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heart_surgery_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heart_surgery_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Surgery"/>
+        <contains rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwa"/>
+        <room_name xml:lang="en">heart_surgery</room_name>
+        <room_number xml:lang="en">3</room_number>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#iheb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#iheb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Cardiologist"/>
+        <heartPatient rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#asma"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">40</age>
+        <name xml:lang="en">iheb</name>
+        <phone xml:lang="en">98222222</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#influenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#influenza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#khalil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#khalil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Cardiologist"/>
+        <heartPatient rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwa"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">65</age>
+        <name xml:lang="en">khalil</name>
+        <phone xml:lang="en">07985804</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#low_heart_rate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#low_heart_rate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#HeartDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Patient"/>
+        <hasHeartDisease rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#cardiac_arrhythmia"/>
+        <heartDoctor rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#khalil"/>
+        <locatedIn rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#heart_surgery_3"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">22</age>
+        <name xml:lang="en">marwa</name>
+        <phone xml:lang="en">98223555</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#PulmonaryPatient"/>
+        <hasPulmonaryDisease rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#influenza"/>
+        <locatedIn rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#reanimation_2"/>
+        <pulmonaryDoctor rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#omar"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">36</age>
+        <name xml:lang="en">marwen</name>
+        <phone xml:lang="en">96888888</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#moetez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#moetez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Injured"/>
+        <hasInjury rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#fracture"/>
+        <locatedIn rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#emergency_1"/>
+        <orthopedicDoctor rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#mohamed"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">25</age>
+        <name xml:lang="en">moetez</name>
+        <phone xml:lang="en">98666666</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#mohamed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#mohamed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Orthopedic"/>
+        <injuredPatient rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#moetez"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">26</age>
+        <name xml:lang="en">mohamed</name>
+        <phone xml:lang="en">98222222</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#omar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#omar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Pulmonogist"/>
+        <pulmonaryPatient rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwen"/>
+        <CIN xml:lang="en">07985804</CIN>
+        <age xml:lang="en">35</age>
+        <name xml:lang="en">omar</name>
+        <phone xml:lang="en">98222222</phone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2021/9/hospital#reanimation_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#reanimation_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#Reanimation"/>
+        <contains rdf:resource="http://www.semanticweb.org/hp/ontologies/2021/9/hospital#marwen"/>
+        <room_number xml:lang="en">2</room_number>
+        <room_number xml:lang="en">reanimation</room_number>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

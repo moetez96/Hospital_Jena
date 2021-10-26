@@ -1,0 +1,11 @@
+PREFIX ns: <http://www.semanticweb.org/hp/ontologies/2021/9/hospital#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?room_number ?room_name ?contains ?type
+WHERE {
+	?room a ns:Room .
+	?room ns:room_number ?room_number .
+	?room ns:room_name ?room_name .
+	?room ns:contains ?contains .
+	?room rdf:type ?type .
+}

@@ -1,0 +1,14 @@
+PREFIX ns: <http://www.semanticweb.org/hp/ontologies/2021/9/hospital#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?name ?age ?phone ?CIN ?takingCareOf ?speciality
+WHERE {
+	?doctor a ns:Doctor .
+	?doctor ns:name ?name .
+	?doctor ns:age ?age .
+	?doctor ns:phone ?phone .
+	?doctor ns:CIN ?CIN .
+	?doctor ns:takingCareOf ?takingCareOf .
+	?doctor rdf:type ?speciality .
+}
